@@ -1,4 +1,4 @@
-package hiber.model;
+package springmvc_hiber.model;
 
 
 import javax.persistence.*;

@@ -1,7 +1,7 @@
-package hiber.config;
+package springmvc_hiber.config;
 
-import hiber.model.Car;
-import hiber.model.User;
+import springmvc_hiber.model.Car;
+import springmvc_hiber.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,8 +20,8 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
-@ComponentScan(value = "hiber")
-public class AppConfig {
+@ComponentScan(value = "springmvc_hiber")
+public class DBConfig {
 
    @Autowired
    private Environment env;

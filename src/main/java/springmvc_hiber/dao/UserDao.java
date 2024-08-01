@@ -1,6 +1,6 @@
-package hiber.dao;
+package springmvc_hiber.dao;
 
-import hiber.model.User;
+import springmvc_hiber.model.User;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,13 +1,12 @@
-package hiber.dao;
+package springmvc_hiber.dao;
 
-import hiber.model.User;
+import springmvc_hiber.model.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
-import java.sql.ResultSet;
 import java.util.List;
 import java.util.Optional;
 
