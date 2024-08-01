@@ -19,11 +19,11 @@ public class UserServiceImp implements UserService {
       this.userDao = userDao;
    }
 
-   @Transactional
-   @Override
-   public void add(User user) {
-      userDao.add(user);
-   }
+//   @Transactional
+//   @Override
+//   public void add(User user) {
+//      userDao.add(user);
+//   }
 
    @Transactional(readOnly = true)
    @Override
@@ -31,10 +31,10 @@ public class UserServiceImp implements UserService {
       return userDao.listUsers();
    }
 
-   @Transactional(readOnly = true)
-   @Override
-   public Optional<User> getUserByCarModelAndCarSeries(String model, int series) {
-      return userDao.getUserByCarModelAndCarSeries(model, series);
-   }
+//   @Transactional(readOnly = true)
+//   @Override
+//   public Optional<User> getUserByCarModelAndCarSeries(String model, int series) {
+//      return userDao.getUserByCarModelAndCarSeries(model, series);
+//   }
 
 }
