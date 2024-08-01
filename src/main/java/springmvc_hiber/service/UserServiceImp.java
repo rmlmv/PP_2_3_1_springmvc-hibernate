@@ -2,39 +2,46 @@ package springmvc_hiber.service;
 
 import springmvc_hiber.dao.UserDao;
 import springmvc_hiber.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserServiceImp implements UserService {
+    private final UserDao userDao;
 
-   private UserDao userDao;
+    public UserServiceImp(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
-   @Autowired
-   public UserServiceImp(UserDao userDao) {
-      this.userDao = userDao;
-   }
+    @Override
+    @Transactional
+    public void saveNewUser(User user) {
+        userDao.saveNewUser(user);
+    }
 
-//   @Transactional
-//   @Override
-//   public void add(User user) {
-//      userDao.add(user);
-//   }
+    @Override
+    @Transactional
+    public void saveExistingUser(User user) {
+        userDao.saveExistingUser(user);
+    }
 
-   @Transactional(readOnly = true)
-   @Override
-   public List<User> listUsers() {
-      return userDao.listUsers();
-   }
+    @Override
+    @Transactional(readOnly = true)
+    public List<User> listUsers() {
+        return userDao.listUsers();
+    }
 
-//   @Transactional(readOnly = true)
-//   @Override
-//   public Optional<User> getUserByCarModelAndCarSeries(String model, int series) {
-//      return userDao.getUserByCarModelAndCarSeries(model, series);
-//   }
+    @Override
+    @Transactional(readOnly = true)
+    public User getUser(long id) {
+        return userDao.getUser(id);
+    }
 
+    @Override
+    @Transactional
+    public void deleteUser(long id) {
+        userDao.deleteUser(id);
+    }
 }
